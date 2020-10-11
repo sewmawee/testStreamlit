@@ -17,15 +17,7 @@ import base64
 RF_pickle_in = open("FD-RandomForestclassifier.pkl","rb")
 RF_classifier =pickle.load(RF_pickle_in)
 
-#decision tree model
 
-DT_pickle_in = open("FD-DecisionTreeClassifier.pkl","rb")
-DT_classifier=pickle.load(DT_pickle_in)
-
-#KNN model
-
-KNN_pickle_in = open("FD-KNNClassifier.pkl","rb")
-KNN_classifier=pickle.load(KNN_pickle_in)
 
 
 
@@ -85,12 +77,7 @@ def main():
             if model_choice == "Random Forest Classification":
                 prediction = RF_classifier.predict(single_sample)
                 pred_prob = RF_classifier.predict_proba(single_sample)
-            elif model_choice == "Decision Tree Classifier":
-                prediction = DT_classifier.predict(single_sample)
-                pred_prob = DT_classifier.predict_proba(single_sample)
-            else:
-                prediction = KNN_classifier.predict(single_sample)
-                pred_prob = KNN_classifier.predict_proba(single_sample)
+  
 
             if prediction == 0:
                 st.text("")
